@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="me.feng.utils.AccessType"/>
+    <classEntry path="me.feng.utils.AttributeInfo"/>
+    <classEntry path="me.feng.utils.SortCompare"/>
+    <classEntry path="me.feng.objectView.base.data.ObjectViewInfo"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>
