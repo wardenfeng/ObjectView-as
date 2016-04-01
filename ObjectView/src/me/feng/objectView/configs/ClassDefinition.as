@@ -1,6 +1,7 @@
 package me.feng.objectView.configs
 {
 	import me.feng.utils.ClassUtils;
+	import me.feng.utils.SortCompare;
 
 	/**
 	 * ObjectView类配置
@@ -102,6 +103,27 @@ package me.feng.objectView.configs
 			ClassUtils.deepCopy(this, ClassUtils.getInstance(this));
 			//设置数据
 			ClassUtils.deepCopy(this, config);
+		}
+
+		/**
+		 * 初始化默认定义
+		 * @param object
+		 * @return
+		 */
+		public function initDefault(object:Object):ClassDefinition
+		{
+			attributeDefinitionVec.length = 0;
+			blockDefinitionVec.length = 0;
+
+			var attributes:Vector.<String> = ClassUtils.getAttributeList(object);
+			attributes = attributes.sort(SortCompare.stringCompare);
+			for (var i:int = 0; i < attributes.length; i++)
+			{
+				getAttributeDefinition(attributes[i]);
+			}
+			getBlockDefinition("");
+
+			return this;
 		}
 	}
 }

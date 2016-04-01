@@ -7,7 +7,6 @@ package me.feng.objectView
 	import me.feng.objectView.configs.AttributeTypeDefinition;
 	import me.feng.objectView.configs.ClassDefinition;
 	import me.feng.utils.ClassUtils;
-	import me.feng.utils.SortCompare;
 
 	/**
 	 * ObjectView总配置数据
@@ -78,24 +77,6 @@ package me.feng.objectView
 				return classConfig;
 			}
 			return null;
-		}
-
-		/**
-		 * 创建默认类配置
-		 * @param name
-		 * @return
-		 */
-		public function createDefaultClassConfig(name:String):ClassDefinition
-		{
-			var classConfig:ClassDefinition = getClassConfig(name);
-
-			var attributes:Vector.<String> = ClassUtils.getAttributeList(name);
-			attributes = attributes.sort(SortCompare.stringCompare);
-			for (var i:int = 0; i < attributes.length; i++)
-			{
-				classConfig.getAttributeDefinition(attributes[i]);
-			}
-			return classConfig;
 		}
 
 		/**
