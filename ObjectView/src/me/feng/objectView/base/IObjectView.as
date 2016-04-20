@@ -9,9 +9,9 @@ package me.feng.objectView.base
 	public interface IObjectView
 	{
 		/**
-		 * 对象界面数据
+		 * 初始化
 		 */
-		function set objectViewInfo(value:ObjectViewInfo):void;
+		function init(objectViewInfo:ObjectViewInfo):void;
 
 		/**
 		 * 界面所属对象（空间）

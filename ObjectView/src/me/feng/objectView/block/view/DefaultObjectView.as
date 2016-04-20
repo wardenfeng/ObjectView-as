@@ -15,46 +15,20 @@ package me.feng.objectView.block.view
 	public class DefaultObjectView extends Sprite implements IObjectView
 	{
 		private var _space:Object;
-		private var isInitView:Boolean;
 		private var _objectViewInfo:ObjectViewInfo;
 		private var blockViews:Vector.<IObjectBlockView>;
 
 		/**
 		 * 对象界面数据
 		 */
-		public function set objectViewInfo(value:ObjectViewInfo):void
+		public function init(objectViewInfo:ObjectViewInfo):void
 		{
-			_objectViewInfo = value;
-			_space = value.owner;
-			if (!isInitView)
-			{
-				initView();
-			}
-			updateView();
-		}
+			_objectViewInfo = objectViewInfo;
+			_space = objectViewInfo.owner;
 
-		public function get space():Object
-		{
-			return _space;
-		}
-
-		public function set space(value:Object):void
-		{
-			_space = value;
-			updateView();
-		}
-
-		/**
-		 * 初始化界面
-		 */
-		private function initView():void
-		{
 			blockViews = new Vector.<IObjectBlockView>();
-
 			var h:Number = 0;
-
 			var objectBlockInfos:Vector.<BlockViewInfo> = _objectViewInfo.getObjectBlockInfos();
-
 			for (var i:int = 0; i < objectBlockInfos.length; i++)
 			{
 				var displayObject:DisplayObject = objectBlockInfos[i].getView();
@@ -68,7 +42,18 @@ package me.feng.objectView.block.view
 			graphics.drawRect(0, 0, 200, h);
 			graphics.endFill();
 
-			isInitView = true;
+			updateView();
+		}
+
+		public function get space():Object
+		{
+			return _space;
+		}
+
+		public function set space(value:Object):void
+		{
+			_space = value;
+			updateView();
 		}
 
 		/**

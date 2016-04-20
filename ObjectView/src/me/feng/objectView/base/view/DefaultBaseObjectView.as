@@ -18,9 +18,9 @@ package me.feng.objectView.base.view
 			super();
 		}
 
-		public function set objectViewInfo(value:ObjectViewInfo):void
+		public function init(objectViewInfo:ObjectViewInfo):void
 		{
-			_space = value.owner;
+			_space = objectViewInfo.owner;
 
 			updateView();
 		}
