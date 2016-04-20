@@ -4,7 +4,6 @@ package me.feng.objectView.viewInfo
 	import flash.utils.Dictionary;
 	
 	import me.feng.objectView.ObjectViewConfig;
-	import me.feng.objectView.iview.IObjectView;
 	import me.feng.objectView.configs.AttributeDefinition;
 	import me.feng.objectView.configs.BlockDefinition;
 	import me.feng.objectView.configs.ClassDefinition;
@@ -203,8 +202,8 @@ package me.feng.objectView.viewInfo
 		{
 			initComponent();
 			
-			var view:DisplayObject = ClassUtils.getInstance(component);
-			IObjectView(view).init(this);
+			var cls:Class = ClassUtils.getClass(component);
+			var view:DisplayObject = new cls(this)
 			return view;
 		}
 	}

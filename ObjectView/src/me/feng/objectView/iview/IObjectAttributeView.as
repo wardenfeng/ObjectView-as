@@ -1,6 +1,6 @@
 package me.feng.objectView.iview
 {
-	import me.feng.objectView.viewInfo.AttributeViewInfo;
+
 
 	/**
 	 * 对象属性界面接口
@@ -8,12 +8,6 @@ package me.feng.objectView.iview
 	 */
 	public interface IObjectAttributeView
 	{
-		/**
-		 * 初始化属性界面
-		 * @param value
-		 */
-		function init(attributeViewInfo:AttributeViewInfo):void;
-
 		/**
 		 * 界面所属对象（空间）
 		 */

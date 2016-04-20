@@ -21,7 +21,7 @@ package me.feng.objectView.view
 
 		private var label:TextField;
 
-		public function init(attributeViewInfo:AttributeViewInfo):void
+		public function CustomAttrView(attributeViewInfo:AttributeViewInfo)
 		{
 			_space = attributeViewInfo.owner;
 			_attributeName = attributeViewInfo.name;

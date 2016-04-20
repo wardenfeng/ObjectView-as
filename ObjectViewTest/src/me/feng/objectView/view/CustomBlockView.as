@@ -18,7 +18,7 @@ package me.feng.objectView.view
 		private var _space:Object;
 		private var _blockName:String;
 
-		public function init(blockViewInfo:BlockViewInfo):void
+		public function CustomBlockView(blockViewInfo:BlockViewInfo)
 		{
 			_blockName = blockViewInfo.name;
 			_space = blockViewInfo.owner;

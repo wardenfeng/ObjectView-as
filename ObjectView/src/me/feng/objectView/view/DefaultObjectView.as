@@ -22,7 +22,7 @@ package me.feng.objectView.view
 		/**
 		 * 对象界面数据
 		 */
-		public function init(objectViewInfo:ObjectViewInfo):void
+		public function DefaultObjectView(objectViewInfo:ObjectViewInfo)
 		{
 			_objectViewInfo = objectViewInfo;
 			_space = objectViewInfo.owner;

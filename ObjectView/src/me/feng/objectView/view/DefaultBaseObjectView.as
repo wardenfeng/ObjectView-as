@@ -15,13 +15,9 @@ package me.feng.objectView.view
 	{
 		private var _space:Object;
 
-		public function DefaultBaseObjectView()
+		public function DefaultBaseObjectView(objectViewInfo:ObjectViewInfo)
 		{
 			super();
-		}
-
-		public function init(objectViewInfo:ObjectViewInfo):void
-		{
 			_space = objectViewInfo.owner;
 
 			updateView();

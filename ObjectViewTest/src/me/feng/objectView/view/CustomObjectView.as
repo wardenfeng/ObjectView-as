@@ -19,7 +19,7 @@ package me.feng.objectView.view
 	{
 		private var _space:Object;
 
-		public function init(objectViewInfo:ObjectViewInfo):void
+		public function CustomObjectView(objectViewInfo:ObjectViewInfo)
 		{
 			_space = objectViewInfo.owner;
 

@@ -3,7 +3,6 @@ package me.feng.objectView.viewInfo
 	import flash.display.DisplayObject;
 
 	import me.feng.objectView.ObjectViewConfig;
-	import me.feng.objectView.iview.IObjectBlockView;
 	import me.feng.utils.ClassUtils;
 
 	/**
@@ -70,8 +69,8 @@ package me.feng.objectView.viewInfo
 		{
 			initComponent();
 
-			var view:DisplayObject = ClassUtils.getInstance(component);
-			IObjectBlockView(view).init(this);
+			var cls:Class = ClassUtils.getClass(component);
+			var view:DisplayObject = new cls(this);
 			return view;
 		}
 	}

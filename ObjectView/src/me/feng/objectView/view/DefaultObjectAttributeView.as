@@ -28,7 +28,7 @@ package me.feng.objectView.view
 		private var _attributeName:String;
 		private var _attributeType:String;
 
-		public function init(attributeViewInfo:AttributeViewInfo):void
+		public function DefaultObjectAttributeView(attributeViewInfo:AttributeViewInfo)
 		{
 			_space = attributeViewInfo.owner;
 			_attributeName = attributeViewInfo.name;

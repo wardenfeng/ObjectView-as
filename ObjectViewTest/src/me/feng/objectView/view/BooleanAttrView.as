@@ -23,7 +23,7 @@ package me.feng.objectView.view
 		private var label:TextField;
 		private var checkBox:CheckBox;
 
-		public function init(attributeViewInfo:AttributeViewInfo):void
+		public function BooleanAttrView(attributeViewInfo:AttributeViewInfo)
 		{
 			_space = attributeViewInfo.owner;
 			_attributeName = attributeViewInfo.name;

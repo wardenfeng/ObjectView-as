@@ -23,7 +23,7 @@ package me.feng.objectView.view
 		/**
 		 * @inheritDoc
 		 */
-		public function init(blockViewInfo:BlockViewInfo):void
+		public function DefaultObjectBlockView(blockViewInfo:BlockViewInfo)
 		{
 			_space = blockViewInfo.owner;
 			_blockName = blockViewInfo.name;
