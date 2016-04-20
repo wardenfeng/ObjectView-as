@@ -24,5 +24,10 @@ package me.feng.objectView.iview
 		 * @param attributeName		属性名称
 		 */
 		function getAttributeView(attributeName:String):IObjectAttributeView;
+
+		/**
+		 * 更新界面
+		 */
+		function updateView():void;
 	}
 }

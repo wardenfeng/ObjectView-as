@@ -51,7 +51,7 @@ package me.feng.objectView.view
 		/**
 		 * 更新界面
 		 */
-		private function updateView():void
+		public function updateView():void
 		{
 
 		}

@@ -24,5 +24,10 @@ package me.feng.objectView.iview
 		 */
 		function get attributeValue():Object;
 		function set attributeValue(value:Object):void;
+
+		/**
+		 * 更新界面
+		 */
+		function updateView():void;
 	}
 }

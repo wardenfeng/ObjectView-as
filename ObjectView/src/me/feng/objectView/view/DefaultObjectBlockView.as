@@ -74,7 +74,12 @@ package me.feng.objectView.view
 		public function set space(value:Object):void
 		{
 			_space = value;
-			updateView();
+			for (var i:int = 0; i < attributeViews.length; i++)
+			{
+				attributeViews[i].space = _space;
+			}
+
+			$updateView();
 		}
 
 		public function get blockName():String
@@ -82,11 +87,20 @@ package me.feng.objectView.view
 			return _blockName;
 		}
 
-		private function updateView():void
+		/**
+		 * 更新自身界面
+		 */
+		private function $updateView():void
 		{
+
+		}
+
+		public function updateView():void
+		{
+			$updateView();
 			for (var i:int = 0; i < attributeViews.length; i++)
 			{
-				attributeViews[i].space = _space;
+				attributeViews[i].updateView();
 			}
 		}
 

@@ -53,7 +53,7 @@ package me.feng.objectView.view
 			return _blockName;
 		}
 
-		private function updateView():void
+		public function updateView():void
 		{
 
 		}

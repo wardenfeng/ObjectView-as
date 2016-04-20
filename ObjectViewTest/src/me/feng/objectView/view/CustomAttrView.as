@@ -77,7 +77,7 @@ package me.feng.objectView.view
 			}
 		}
 
-		private function updateView():void
+		public function updateView():void
 		{
 
 		}

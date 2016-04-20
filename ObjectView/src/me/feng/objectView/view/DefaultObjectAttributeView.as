@@ -93,7 +93,9 @@ package me.feng.objectView.view
 				objectViewEvent.attributeName = _attributeName;
 				objectViewEvent.attributeValue = attributeValue;
 				dispatchEvent(objectViewEvent);
+
 			}
+			updateView();
 		}
 
 		protected function onFocusOut(event:FocusEvent):void
@@ -106,7 +108,6 @@ package me.feng.objectView.view
 				{
 					attributeValue = false;
 				}
-				updateView();
 			}
 
 			textTemp = null;
@@ -120,7 +121,7 @@ package me.feng.objectView.view
 		/**
 		 * 更新界面
 		 */
-		private function updateView():void
+		public function updateView():void
 		{
 			label.text = _attributeName + ":";
 			text.text = String(attributeValue);

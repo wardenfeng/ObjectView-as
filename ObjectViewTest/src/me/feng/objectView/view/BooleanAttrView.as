@@ -60,7 +60,7 @@ package me.feng.objectView.view
 			updateView();
 		}
 
-		private function updateView():void
+		public function updateView():void
 		{
 			checkBox.selected = attributeValue;
 		}

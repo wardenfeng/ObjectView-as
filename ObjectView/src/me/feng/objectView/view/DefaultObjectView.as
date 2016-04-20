@@ -54,18 +54,33 @@ package me.feng.objectView.view
 		public function set space(value:Object):void
 		{
 			_space = value;
-			updateView();
+			for (var i:int = 0; i < blockViews.length; i++)
+			{
+				blockViews[i].space = _space;
+			}
+
+			$updateView();
 		}
 
 		/**
 		 * 更新界面
 		 */
-		private function updateView():void
+		public function updateView():void
 		{
+			$updateView();
+
 			for (var i:int = 0; i < blockViews.length; i++)
 			{
-				blockViews[i].space = _space;
+				blockViews[i].updateView();
 			}
+		}
+
+		/**
+		 * 更新自身界面
+		 */
+		private function $updateView():void
+		{
+
 		}
 
 		public function getblockView(blockName:String):IObjectBlockView
