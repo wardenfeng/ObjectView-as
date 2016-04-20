@@ -16,18 +16,26 @@ package me.feng.objectView.view
 	public class CustomBlockView extends Sprite implements IObjectBlockView
 	{
 		private var _space:Object;
-		private var isInitView:Boolean;
-		private var _blockViewInfo:BlockViewInfo;
+		private var _blockName:String;
+
 		private var attributeViews:Vector.<IObjectAttributeView>;
 
-		public function set blockViewInfo(value:BlockViewInfo):void
+		public function init(blockViewInfo:BlockViewInfo):void
 		{
-			_blockViewInfo = value;
-			_space = value.owner;
-			if (!isInitView)
-			{
-				initView();
-			}
+			_blockName = blockViewInfo.name;
+			_space = blockViewInfo.owner;
+
+			var label:TextField
+			label = new TextField();
+			label.text = "自定义块界面_(blockName:" + _blockName + ")";
+			label.textColor = 0xff00ff;
+			label.width = 100;
+			label.wordWrap = true;
+
+			var bitmap:Bitmap = new Bitmap(new BitmapData(100, 50, false, 0));
+			bitmap.bitmapData.draw(label);
+			addChild(bitmap);
+
 			updateView();
 		}
 
@@ -42,20 +50,9 @@ package me.feng.objectView.view
 			updateView();
 		}
 
-		private function initView():void
+		public function get blockName():String
 		{
-			var label:TextField
-			label = new TextField();
-			label.text = "自定义块界面_(blockName:" + _blockViewInfo.name + ")";
-			label.textColor = 0xff00ff;
-			label.width = 100;
-			label.wordWrap = true;
-
-			var bitmap:Bitmap = new Bitmap(new BitmapData(100, 50, false, 0));
-			bitmap.bitmapData.draw(label);
-			addChild(bitmap);
-
-			isInitView = true;
+			return _blockName;
 		}
 
 		private function updateView():void

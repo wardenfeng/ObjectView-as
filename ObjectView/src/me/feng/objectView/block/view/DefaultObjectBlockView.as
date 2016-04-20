@@ -13,55 +13,36 @@ package me.feng.objectView.block.view
 	 * 默认对象属性块界面
 	 * @author feng 2016-3-22
 	 */
-	public class DefaultObjectAttributeBlockView extends Sprite implements IObjectBlockView
+	public class DefaultObjectBlockView extends Sprite implements IObjectBlockView
 	{
 		private var _space:Object;
-		private var isInitView:Boolean;
-		private var _blockViewInfo:BlockViewInfo;
+		private var _blockName:String;
+
 		private var attributeViews:Vector.<IObjectAttributeView>;
 
 		/**
 		 * @inheritDoc
 		 */
-		public function set blockViewInfo(value:BlockViewInfo):void
+		public function init(blockViewInfo:BlockViewInfo):void
 		{
-			_blockViewInfo = value;
-			_space = value.owner;
-			if (!isInitView)
-			{
-				initView();
-			}
-			updateView();
-		}
+			_space = blockViewInfo.owner;
+			_blockName = blockViewInfo.name;
 
-		public function get space():Object
-		{
-			return _space;
-		}
-
-		public function set space(value:Object):void
-		{
-			_space = value;
-			updateView();
-		}
-
-		private function initView():void
-		{
 			var h:Number = 0;
-			if (_blockViewInfo.name != null && _blockViewInfo.name.length > 0)
+			if (_blockName != null && _blockName.length > 0)
 			{
 				var blockTitle:TextField = new TextField();
 				//			label.height = 50;
 				blockTitle.width = 100;
 				blockTitle.height = 20;
 				blockTitle.textColor = 0xff0000;
-				blockTitle.text = _blockViewInfo.name;
+				blockTitle.text = _blockName;
 				addChild(blockTitle);
 				h = blockTitle.x + blockTitle.height + 2;
 			}
 
 			attributeViews = new Vector.<IObjectAttributeView>();
-			var objectAttributeInfos:Vector.<AttributeViewInfo> = _blockViewInfo.itemList;
+			var objectAttributeInfos:Vector.<AttributeViewInfo> = blockViewInfo.itemList;
 			for (var i:int = 0; i < objectAttributeInfos.length; i++)
 			{
 				if (!objectAttributeInfos[i].canRead())
@@ -82,7 +63,23 @@ package me.feng.objectView.block.view
 			graphics.lineTo(0, 0);
 			graphics.endFill();
 
-			isInitView = true;
+			updateView();
+		}
+
+		public function get space():Object
+		{
+			return _space;
+		}
+
+		public function set space(value:Object):void
+		{
+			_space = value;
+			updateView();
+		}
+
+		public function get blockName():String
+		{
+			return _blockName;
 		}
 
 		private function updateView():void

@@ -72,7 +72,7 @@ package me.feng.objectView.block.data
 			initComponent();
 
 			var view:DisplayObject = ClassUtils.getInstance(component);
-			IObjectBlockView(view).blockViewInfo = this;
+			IObjectBlockView(view).init(this);
 			return view;
 		}
 	}

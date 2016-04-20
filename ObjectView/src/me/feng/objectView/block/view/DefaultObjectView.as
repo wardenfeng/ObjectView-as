@@ -12,7 +12,7 @@ package me.feng.objectView.block.view
 	 * 默认使用块的对象界面
 	 * @author feng 2016-3-22
 	 */
-	public class DefaultObjectViewWithBlock extends Sprite implements IObjectView
+	public class DefaultObjectView extends Sprite implements IObjectView
 	{
 		private var _space:Object;
 		private var isInitView:Boolean;

@@ -2,8 +2,8 @@ package me.feng.objectView
 {
 	import me.feng.objectView.base.view.DefaultBaseObjectView;
 	import me.feng.objectView.base.view.DefaultObjectAttributeView;
-	import me.feng.objectView.block.view.DefaultObjectAttributeBlockView;
-	import me.feng.objectView.block.view.DefaultObjectViewWithBlock;
+	import me.feng.objectView.block.view.DefaultObjectBlockView;
+	import me.feng.objectView.block.view.DefaultObjectView;
 	import me.feng.objectView.configs.AttributeTypeDefinition;
 	import me.feng.objectView.configs.ClassDefinition;
 	import me.feng.utils.ClassUtils;
@@ -21,7 +21,7 @@ package me.feng.objectView
 		/**
 		 * 默认对象界面类定义
 		 */
-		public var defaultObjectViewClass:String = ClassUtils.getClassName(DefaultObjectViewWithBlock);
+		public var defaultObjectViewClass:String = ClassUtils.getClassName(DefaultObjectView);
 		/**
 		 * 默认对象属性界面类定义
 		 */
@@ -29,7 +29,7 @@ package me.feng.objectView
 		/**
 		 * 属性块默认界面
 		 */
-		public var defaultObjectAttributeBlockView:String = ClassUtils.getClassName(DefaultObjectAttributeBlockView);
+		public var defaultObjectAttributeBlockView:String = ClassUtils.getClassName(DefaultObjectBlockView);
 
 		/**
 		 * 指定属性类型界面类定义字典（key:属性类名称,value:属性界面类定义）

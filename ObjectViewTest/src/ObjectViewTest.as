@@ -10,7 +10,7 @@ package
 
 	import me.feng.objectView.ObjectView;
 	import me.feng.objectView.ObjectViewConfig;
-	import me.feng.objectView.block.view.DefaultObjectViewWithBlock;
+	import me.feng.objectView.block.view.DefaultObjectView;
 	import me.feng.objectView.configs.ClassDefinition;
 	import me.feng.objectView.data.ObjectA;
 	import me.feng.objectView.events.ObjectViewEvent;
@@ -62,7 +62,7 @@ package
 
 			initBlockConfig()
 
-			var aView:DefaultObjectViewWithBlock = ObjectView.getObjectView(a) as DefaultObjectViewWithBlock;
+			var aView:DefaultObjectView = ObjectView.getObjectView(a) as DefaultObjectView;
 			aView.addEventListener(ObjectViewEvent.VALUE_CHANGE, onValueChange);
 			box.addChild(aView);
 

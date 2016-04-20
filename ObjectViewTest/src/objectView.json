@@ -1,131 +1,123 @@
 ﻿{
-    "classConfigVec": [
-        {
-            "component": "me.feng.objectView.view::CustomObjectView",
-            "blockDefinitionVec": [],
-            "attributeDefinitionVec": [
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "坐标",
-                    "name": "accessibilityImplementation"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "坐标",
-                    "name": "x"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "坐标",
-                    "name": "y"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "坐标",
-                    "name": "z"
-                }
-            ],
-            "name": "flash.display::Sprite"
-        },
-        {
-            "component": "",
-            "blockDefinitionVec": [
-                {
-                    "component": "me.feng.objectView.view::CustomBlockView",
-                    "componentParam": null,
-                    "name": "自定义块"
-                }
-            ],
-            "attributeDefinitionVec": [
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "坐标",
-                    "name": "x"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "坐标",
-                    "name": "y"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "坐标",
-                    "name": "z"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "旋转",
-                    "name": "rx"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "旋转",
-                    "name": "ry"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "旋转",
-                    "name": "rz"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "缩放",
-                    "name": "sx"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "缩放",
-                    "name": "sy"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "缩放",
-                    "name": "sz"
-                },
-                {
-                    "component": "me.feng.objectView.view::CustomAttrView",
-                    "componentParam": null,
-                    "block": "缩放",
-                    "name": "custom"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "自定义块",
-                    "name": "a"
-                },
-                {
-                    "component": "",
-                    "componentParam": null,
-                    "block": "自定义块",
-                    "name": "b"
-                }
-            ],
-            "name": "me.feng.objectView.data::ObjectA"
-        }
-    ],
-    "defaultBaseObjectViewClass": "me.feng.objectView.base.view::DefaultBaseObjectView",
-    "defaultObjectAttributeViewClass": "me.feng.objectView.base.view::DefaultObjectAttributeView",
-    "defaultObjectViewClass": "me.feng.objectView.block.view::DefaultObjectViewWithBlock",
-    "attributeDefaultViewClassByTypeVec": [
-        {
-            "type": "Boolean",
-            "componentParam": null,
-            "component": "me.feng.objectView.view::BooleanAttrView"
-        }
-    ],
-    "defaultObjectAttributeBlockView": "me.feng.objectView.block.view::DefaultObjectAttributeBlockView"
+	"defaultObjectAttributeBlockView": "me.feng.objectView.block.view::DefaultObjectBlockView",
+	"defaultObjectViewClass": "me.feng.objectView.block.view::DefaultObjectView",
+	"defaultBaseObjectViewClass": "me.feng.objectView.base.view::DefaultBaseObjectView",
+	"defaultObjectAttributeViewClass": "me.feng.objectView.base.view::DefaultObjectAttributeView",
+	"classConfigVec": [{
+		"blockDefinitionVec": [],
+		"attributeDefinitionVec": [{
+			"component": "",
+			"componentParam": null,
+			"name": "accessibilityImplementation",
+			"block": "坐标"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "x",
+			"block": "坐标"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "y",
+			"block": "坐标"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "z",
+			"block": "坐标"
+		}],
+		"componentParam": null,
+		"component": "me.feng.objectView.view::CustomObjectView",
+		"name": "flash.display::Sprite"
+	},
+	{
+		"blockDefinitionVec": [{
+			"component": "me.feng.objectView.view::CustomBlockView",
+			"componentParam": null,
+			"name": "自定义块"
+		}],
+		"attributeDefinitionVec": [{
+			"component": "",
+			"componentParam": null,
+			"name": "x",
+			"block": "坐标"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "y",
+			"block": "坐标"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "z",
+			"block": "坐标"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "rx",
+			"block": "旋转"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "ry",
+			"block": "旋转"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "rz",
+			"block": "旋转"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "sx",
+			"block": "缩放"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "sy",
+			"block": "缩放"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "sz",
+			"block": "缩放"
+		},
+		{
+			"component": "me.feng.objectView.view::CustomAttrView",
+			"componentParam": null,
+			"name": "custom",
+			"block": "缩放"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "a",
+			"block": "自定义块"
+		},
+		{
+			"component": "",
+			"componentParam": null,
+			"name": "b",
+			"block": "自定义块"
+		}],
+		"componentParam": null,
+		"component": "",
+		"name": "me.feng.objectView.data::ObjectA"
+	}],
+	"attributeDefaultViewClassByTypeVec": [{
+		"type": "Boolean",
+		"component": "me.feng.objectView.view::BooleanAttrView",
+		"componentParam": null
+	}]
 }

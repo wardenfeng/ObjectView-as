@@ -12,12 +12,17 @@ package me.feng.objectView.block
 		 * 设置对象属性块信息
 		 * @param value
 		 */
-		function set blockViewInfo(value:BlockViewInfo):void;
+		function init(blockViewInfo:BlockViewInfo):void;
 
 		/**
 		 * 界面所属对象（空间）
 		 */
 		function get space():Object;
 		function set space(value:Object):void;
+
+		/**
+		 * 块名称
+		 */
+		function get blockName():String;
 	}
 }
