@@ -5,7 +5,7 @@ package me.feng.objectView.block.view
 
 	import me.feng.objectView.base.IObjectView;
 	import me.feng.objectView.base.data.ObjectViewInfo;
-	import me.feng.objectView.block.IObjectAttributeBlockView;
+	import me.feng.objectView.block.IObjectBlockView;
 	import me.feng.objectView.block.data.BlockViewInfo;
 
 	/**
@@ -17,7 +17,7 @@ package me.feng.objectView.block.view
 		private var _space:Object;
 		private var isInitView:Boolean;
 		private var _objectViewInfo:ObjectViewInfo;
-		private var blockViews:Vector.<IObjectAttributeBlockView>;
+		private var blockViews:Vector.<IObjectBlockView>;
 
 		/**
 		 * 对象界面数据
@@ -49,7 +49,7 @@ package me.feng.objectView.block.view
 		 */
 		private function initView():void
 		{
-			blockViews = new Vector.<IObjectAttributeBlockView>();
+			blockViews = new Vector.<IObjectBlockView>();
 
 			var h:Number = 0;
 
@@ -61,7 +61,7 @@ package me.feng.objectView.block.view
 				displayObject.y = h;
 				addChild(displayObject);
 				h += displayObject.height + 2;
-				blockViews.push(displayObject as IObjectAttributeBlockView);
+				blockViews.push(displayObject as IObjectBlockView);
 			}
 			graphics.clear();
 			graphics.beginFill(0x666666);

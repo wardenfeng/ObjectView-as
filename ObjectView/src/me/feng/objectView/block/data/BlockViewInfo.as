@@ -4,7 +4,7 @@ package me.feng.objectView.block.data
 
 	import me.feng.objectView.ObjectViewConfig;
 	import me.feng.objectView.base.data.AttributeViewInfo;
-	import me.feng.objectView.block.IObjectAttributeBlockView;
+	import me.feng.objectView.block.IObjectBlockView;
 	import me.feng.utils.ClassUtils;
 
 	/**
@@ -72,7 +72,7 @@ package me.feng.objectView.block.data
 			initComponent();
 
 			var view:DisplayObject = ClassUtils.getInstance(component);
-			IObjectAttributeBlockView(view).blockViewInfo = this;
+			IObjectBlockView(view).blockViewInfo = this;
 			return view;
 		}
 	}

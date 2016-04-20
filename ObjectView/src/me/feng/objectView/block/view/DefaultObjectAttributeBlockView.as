@@ -6,14 +6,14 @@ package me.feng.objectView.block.view
 
 	import me.feng.objectView.base.IObjectAttributeView;
 	import me.feng.objectView.base.data.AttributeViewInfo;
-	import me.feng.objectView.block.IObjectAttributeBlockView;
+	import me.feng.objectView.block.IObjectBlockView;
 	import me.feng.objectView.block.data.BlockViewInfo;
 
 	/**
 	 * 默认对象属性块界面
 	 * @author feng 2016-3-22
 	 */
-	public class DefaultObjectAttributeBlockView extends Sprite implements IObjectAttributeBlockView
+	public class DefaultObjectAttributeBlockView extends Sprite implements IObjectBlockView
 	{
 		private var _space:Object;
 		private var isInitView:Boolean;

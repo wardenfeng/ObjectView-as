@@ -6,14 +6,14 @@ package me.feng.objectView.view
 	import flash.text.TextField;
 
 	import me.feng.objectView.base.IObjectAttributeView;
-	import me.feng.objectView.block.IObjectAttributeBlockView;
+	import me.feng.objectView.block.IObjectBlockView;
 	import me.feng.objectView.block.data.BlockViewInfo;
 
 	/**
 	 * 自定义块界面
 	 * @author feng 2016-3-23
 	 */
-	public class CustomBlockView extends Sprite implements IObjectAttributeBlockView
+	public class CustomBlockView extends Sprite implements IObjectBlockView
 	{
 		private var _space:Object;
 		private var isInitView:Boolean;
