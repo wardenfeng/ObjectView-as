@@ -2,6 +2,7 @@ package
 {
 	import com.bit101.components.HBox;
 
+	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
@@ -10,7 +11,6 @@ package
 
 	import me.feng.objectView.ObjectView;
 	import me.feng.objectView.ObjectViewConfig;
-	import me.feng.objectView.view.DefaultObjectView;
 	import me.feng.objectView.configs.ClassDefinition;
 	import me.feng.objectView.data.ObjectA;
 	import me.feng.objectView.events.ObjectViewEvent;
@@ -18,6 +18,7 @@ package
 	import me.feng.objectView.view.CustomAttrView;
 	import me.feng.objectView.view.CustomBlockView;
 	import me.feng.objectView.view.CustomObjectView;
+	import me.feng.objectView.view.DefaultObjectView;
 
 	//
 	//
@@ -65,6 +66,9 @@ package
 			var aView:DefaultObjectView = ObjectView.getObjectView(a) as DefaultObjectView;
 			aView.addEventListener(ObjectViewEvent.VALUE_CHANGE, onValueChange);
 			box.addChild(aView);
+
+			DisplayObject(aView.getblockView("坐标")).alpha = 0.5;
+			DisplayObject(aView.getAttributeView("ry")).alpha = 0.2;
 
 			trace(getTimer() - t);
 			t = getTimer();

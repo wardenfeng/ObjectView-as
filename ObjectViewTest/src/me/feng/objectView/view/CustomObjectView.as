@@ -6,6 +6,8 @@ package me.feng.objectView.view
 	import flash.text.TextField;
 	import flash.utils.getQualifiedClassName;
 
+	import me.feng.objectView.iview.IObjectAttributeView;
+	import me.feng.objectView.iview.IObjectBlockView;
 	import me.feng.objectView.iview.IObjectView;
 	import me.feng.objectView.viewInfo.ObjectViewInfo;
 
@@ -52,6 +54,16 @@ package me.feng.objectView.view
 		private function updateView():void
 		{
 
+		}
+
+		public function getAttributeView(attributeName:String):IObjectAttributeView
+		{
+			return null;
+		}
+
+		public function getblockView(blockName:String):IObjectBlockView
+		{
+			return null;
 		}
 	}
 }

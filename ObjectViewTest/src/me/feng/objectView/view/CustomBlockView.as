@@ -18,8 +18,6 @@ package me.feng.objectView.view
 		private var _space:Object;
 		private var _blockName:String;
 
-		private var attributeViews:Vector.<IObjectAttributeView>;
-
 		public function init(blockViewInfo:BlockViewInfo):void
 		{
 			_blockName = blockViewInfo.name;
@@ -59,5 +57,13 @@ package me.feng.objectView.view
 		{
 
 		}
+
+		public function getAttributeView(attributeName:String):IObjectAttributeView
+		{
+			// TODO Auto Generated method stub
+			return null;
+		}
+
+
 	}
 }

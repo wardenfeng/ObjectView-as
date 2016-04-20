@@ -3,10 +3,11 @@ package me.feng.objectView.view
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 
-	import me.feng.objectView.iview.IObjectView;
-	import me.feng.objectView.viewInfo.ObjectViewInfo;
+	import me.feng.objectView.iview.IObjectAttributeView;
 	import me.feng.objectView.iview.IObjectBlockView;
+	import me.feng.objectView.iview.IObjectView;
 	import me.feng.objectView.viewInfo.BlockViewInfo;
+	import me.feng.objectView.viewInfo.ObjectViewInfo;
 
 	/**
 	 * 默认使用块的对象界面
@@ -67,5 +68,29 @@ package me.feng.objectView.view
 			}
 		}
 
+		public function getblockView(blockName:String):IObjectBlockView
+		{
+			for (var i:int = 0; i < blockViews.length; i++)
+			{
+				if (blockViews[i].blockName == blockName)
+				{
+					return blockViews[i];
+				}
+			}
+			return null;
+		}
+
+		public function getAttributeView(attributeName:String):IObjectAttributeView
+		{
+			for (var i:int = 0; i < blockViews.length; i++)
+			{
+				var attributeView:IObjectAttributeView = blockViews[i].getAttributeView(attributeName);
+				if (attributeView != null)
+				{
+					return attributeView;
+				}
+			}
+			return null;
+		}
 	}
 }

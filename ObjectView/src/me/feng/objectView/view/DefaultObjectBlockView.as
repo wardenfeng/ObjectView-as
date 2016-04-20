@@ -5,8 +5,8 @@ package me.feng.objectView.view
 	import flash.text.TextField;
 
 	import me.feng.objectView.iview.IObjectAttributeView;
-	import me.feng.objectView.viewInfo.AttributeViewInfo;
 	import me.feng.objectView.iview.IObjectBlockView;
+	import me.feng.objectView.viewInfo.AttributeViewInfo;
 	import me.feng.objectView.viewInfo.BlockViewInfo;
 
 	/**
@@ -90,5 +90,16 @@ package me.feng.objectView.view
 			}
 		}
 
+		public function getAttributeView(attributeName:String):IObjectAttributeView
+		{
+			for (var i:int = 0; i < attributeViews.length; i++)
+			{
+				if (attributeViews[i].attributeName == attributeName)
+				{
+					return attributeViews[i];
+				}
+			}
+			return null;
+		}
 	}
 }
