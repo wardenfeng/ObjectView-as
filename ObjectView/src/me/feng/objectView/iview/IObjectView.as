@@ -6,14 +6,8 @@ package me.feng.objectView.iview
 	 * 对象界面接口
 	 * @author feng 2016-3-11
 	 */
-	public interface IObjectView
+	public interface IObjectView extends IObjectViewBase
 	{
-		/**
-		 * 界面所属对象（空间）
-		 */
-		function get space():Object;
-		function set space(value:Object):void;
-
 		/**
 		 * 获取块界面
 		 * @param blockName		块名称
@@ -25,10 +19,5 @@ package me.feng.objectView.iview
 		 * @param attributeName		属性名称
 		 */
 		function getAttributeView(attributeName:String):IObjectAttributeView;
-
-		/**
-		 * 更新界面
-		 */
-		function updateView():void;
 	}
 }
