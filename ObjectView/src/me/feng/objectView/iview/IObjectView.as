@@ -1,6 +1,6 @@
-package me.feng.objectView.base
+package me.feng.objectView.iview
 {
-	import me.feng.objectView.base.data.ObjectViewInfo;
+	import me.feng.objectView.viewInfo.ObjectViewInfo;
 
 	/**
 	 * 对象界面接口

@@ -4,7 +4,7 @@
     <classEntry path="me.feng.utils.AccessType"/>
     <classEntry path="me.feng.utils.AttributeInfo"/>
     <classEntry path="me.feng.utils.SortCompare"/>
-    <classEntry path="me.feng.objectView.base.data.ObjectViewInfo"/>
+    <classEntry path="me.feng.objectView.viewInfo.ObjectViewInfo"/>
     <classEntry path="me.feng.objectView.events.ObjectViewEvent"/>
   </includeClasses>
   <includeResources/>

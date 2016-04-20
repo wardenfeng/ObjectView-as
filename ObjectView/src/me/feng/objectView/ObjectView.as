@@ -2,7 +2,7 @@ package me.feng.objectView
 {
 	import flash.display.DisplayObject;
 
-	import me.feng.objectView.base.data.ObjectViewInfo;
+	import me.feng.objectView.viewInfo.ObjectViewInfo;
 	import me.feng.objectView.configs.ClassDefinition;
 	import me.feng.utils.ClassUtils;
 

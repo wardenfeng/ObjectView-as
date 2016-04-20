@@ -5,9 +5,9 @@ package me.feng.objectView.view
 	import flash.display.Sprite;
 	import flash.text.TextField;
 
-	import me.feng.objectView.base.IObjectAttributeView;
-	import me.feng.objectView.base.data.AttributeViewInfo;
 	import me.feng.objectView.events.ObjectViewEvent;
+	import me.feng.objectView.iview.IObjectAttributeView;
+	import me.feng.objectView.viewInfo.AttributeViewInfo;
 
 	/**
 	 * 自定义属性界面

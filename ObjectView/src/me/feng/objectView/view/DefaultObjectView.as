@@ -1,12 +1,12 @@
-package me.feng.objectView.block.view
+package me.feng.objectView.view
 {
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 
-	import me.feng.objectView.base.IObjectView;
-	import me.feng.objectView.base.data.ObjectViewInfo;
-	import me.feng.objectView.block.IObjectBlockView;
-	import me.feng.objectView.block.data.BlockViewInfo;
+	import me.feng.objectView.iview.IObjectView;
+	import me.feng.objectView.viewInfo.ObjectViewInfo;
+	import me.feng.objectView.iview.IObjectBlockView;
+	import me.feng.objectView.viewInfo.BlockViewInfo;
 
 	/**
 	 * 默认使用块的对象界面

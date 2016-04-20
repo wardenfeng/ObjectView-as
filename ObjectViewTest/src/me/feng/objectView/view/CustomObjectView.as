@@ -6,8 +6,8 @@ package me.feng.objectView.view
 	import flash.text.TextField;
 	import flash.utils.getQualifiedClassName;
 
-	import me.feng.objectView.base.IObjectView;
-	import me.feng.objectView.base.data.ObjectViewInfo;
+	import me.feng.objectView.iview.IObjectView;
+	import me.feng.objectView.viewInfo.ObjectViewInfo;
 
 	/**
 	 *

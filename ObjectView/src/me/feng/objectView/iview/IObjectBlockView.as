@@ -1,6 +1,6 @@
-package me.feng.objectView.block
+package me.feng.objectView.iview
 {
-	import me.feng.objectView.block.data.BlockViewInfo;
+	import me.feng.objectView.viewInfo.BlockViewInfo;
 
 	/**
 	 * 对象属性块界面接口

@@ -1,9 +1,9 @@
-package me.feng.objectView.base.view
+package me.feng.objectView.view
 {
 	import flash.text.TextField;
 
-	import me.feng.objectView.base.IObjectView;
-	import me.feng.objectView.base.data.ObjectViewInfo;
+	import me.feng.objectView.iview.IObjectView;
+	import me.feng.objectView.viewInfo.ObjectViewInfo;
 
 	/**
 	 * 默认基础对象界面

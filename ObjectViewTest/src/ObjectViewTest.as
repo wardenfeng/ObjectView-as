@@ -10,7 +10,7 @@ package
 
 	import me.feng.objectView.ObjectView;
 	import me.feng.objectView.ObjectViewConfig;
-	import me.feng.objectView.block.view.DefaultObjectView;
+	import me.feng.objectView.view.DefaultObjectView;
 	import me.feng.objectView.configs.ClassDefinition;
 	import me.feng.objectView.data.ObjectA;
 	import me.feng.objectView.events.ObjectViewEvent;

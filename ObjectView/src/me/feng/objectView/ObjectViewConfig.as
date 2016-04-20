@@ -1,9 +1,9 @@
 package me.feng.objectView
 {
-	import me.feng.objectView.base.view.DefaultBaseObjectView;
-	import me.feng.objectView.base.view.DefaultObjectAttributeView;
-	import me.feng.objectView.block.view.DefaultObjectBlockView;
-	import me.feng.objectView.block.view.DefaultObjectView;
+	import me.feng.objectView.view.DefaultBaseObjectView;
+	import me.feng.objectView.view.DefaultObjectAttributeView;
+	import me.feng.objectView.view.DefaultObjectBlockView;
+	import me.feng.objectView.view.DefaultObjectView;
 	import me.feng.objectView.configs.AttributeTypeDefinition;
 	import me.feng.objectView.configs.ClassDefinition;
 	import me.feng.utils.ClassUtils;

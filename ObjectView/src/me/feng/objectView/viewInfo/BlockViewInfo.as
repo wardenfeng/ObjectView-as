@@ -1,10 +1,9 @@
-package me.feng.objectView.block.data
+package me.feng.objectView.viewInfo
 {
 	import flash.display.DisplayObject;
 
 	import me.feng.objectView.ObjectViewConfig;
-	import me.feng.objectView.base.data.AttributeViewInfo;
-	import me.feng.objectView.block.IObjectBlockView;
+	import me.feng.objectView.iview.IObjectBlockView;
 	import me.feng.utils.ClassUtils;
 
 	/**

@@ -1,11 +1,10 @@
-package me.feng.objectView.base.data
+package me.feng.objectView.viewInfo
 {
 	import flash.display.DisplayObject;
 	import flash.utils.Dictionary;
 	
 	import me.feng.objectView.ObjectViewConfig;
-	import me.feng.objectView.base.IObjectView;
-	import me.feng.objectView.block.data.BlockViewInfo;
+	import me.feng.objectView.iview.IObjectView;
 	import me.feng.objectView.configs.AttributeDefinition;
 	import me.feng.objectView.configs.BlockDefinition;
 	import me.feng.objectView.configs.ClassDefinition;
