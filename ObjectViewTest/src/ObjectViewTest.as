@@ -10,8 +10,10 @@ package
 
 	import me.feng.objectView.ObjectView;
 	import me.feng.objectView.ObjectViewConfig;
+	import me.feng.objectView.block.view.DefaultObjectViewWithBlock;
 	import me.feng.objectView.configs.ClassDefinition;
 	import me.feng.objectView.data.ObjectA;
+	import me.feng.objectView.events.ObjectViewEvent;
 	import me.feng.objectView.view.BooleanAttrView;
 	import me.feng.objectView.view.CustomAttrView;
 	import me.feng.objectView.view.CustomBlockView;
@@ -59,7 +61,10 @@ package
 			var t:int = getTimer();
 
 			initBlockConfig()
-			box.addChild(ObjectView.getObjectView(a));
+
+			var aView:DefaultObjectViewWithBlock = ObjectView.getObjectView(a) as DefaultObjectViewWithBlock;
+			aView.addEventListener(ObjectViewEvent.VALUE_CHANGE, onValueChange);
+			box.addChild(aView);
 
 			trace(getTimer() - t);
 			t = getTimer();
@@ -80,6 +85,11 @@ package
 			box.addChild(ObjectView.getObjectView(a));
 			trace(getTimer() - t);
 			t = getTimer();
+		}
+
+		protected function onValueChange(event:ObjectViewEvent):void
+		{
+			trace(event.toString());
 		}
 
 		private function initBlockConfig():void

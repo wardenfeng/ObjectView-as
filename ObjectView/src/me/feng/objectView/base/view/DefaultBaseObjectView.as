@@ -11,14 +11,37 @@ package me.feng.objectView.base.view
 	 */
 	public class DefaultBaseObjectView extends TextField implements IObjectView
 	{
+		private var _space:Object;
+
 		public function DefaultBaseObjectView()
 		{
 			super();
 		}
 
-		public function set data(value:ObjectViewInfo):void
+		public function set objectViewInfo(value:ObjectViewInfo):void
 		{
-			text = String(value.owner);
+			_space = value.owner;
+
+			updateView();
+		}
+
+		public function get space():Object
+		{
+			return _space;
+		}
+
+		public function set space(value:Object):void
+		{
+			_space = value;
+			updateView();
+		}
+
+		/**
+		 * 更新界面
+		 */
+		private function updateView():void
+		{
+			text = String(_space);
 		}
 	}
 }

@@ -15,11 +15,41 @@ package me.feng.objectView.view
 	 */
 	public class CustomObjectView extends Sprite implements IObjectView
 	{
-		public function set data(value:ObjectViewInfo):void
+		private var _space:Object;
+		private var isInitView:Boolean;
+		private var _objectViewInfo:ObjectViewInfo;
+
+		public function set objectViewInfo(value:ObjectViewInfo):void
+		{
+			_objectViewInfo = value;
+			_space = value.owner;
+			if (!isInitView)
+			{
+				initView();
+			}
+			updateView();
+		}
+
+
+		public function get space():Object
+		{
+			return _space;
+		}
+
+		public function set space(value:Object):void
+		{
+			_space = value;
+			updateView();
+		}
+
+		/**
+		 * 初始化界面
+		 */
+		private function initView():void
 		{
 			var label:TextField
 			label = new TextField();
-			label.text = "自定义对象界面_" + getQualifiedClassName(value.owner);
+			label.text = "自定义对象界面_" + getQualifiedClassName(_objectViewInfo.owner);
 			label.textColor = 0xff00ff;
 			label.width = 100;
 			label.wordWrap = true;
@@ -27,6 +57,16 @@ package me.feng.objectView.view
 			var bitmap:Bitmap = new Bitmap(new BitmapData(100, 50, false, 0));
 			bitmap.bitmapData.draw(label);
 			addChild(bitmap);
+
+			isInitView = true;
+		}
+
+		/**
+		 * 更新界面
+		 */
+		private function updateView():void
+		{
+
 		}
 	}
 }

@@ -205,7 +205,7 @@ package me.feng.objectView.base.data
 			initComponent();
 			
 			var view:DisplayObject = ClassUtils.getInstance(component);
-			IObjectView(view).data = this;
+			IObjectView(view).objectViewInfo = this;
 			return view;
 		}
 	}

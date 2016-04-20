@@ -7,6 +7,7 @@ package me.feng.objectView.view
 
 	import me.feng.objectView.base.IObjectAttributeView;
 	import me.feng.objectView.base.data.AttributeViewInfo;
+	import me.feng.objectView.events.ObjectViewEvent;
 
 	/**
 	 * 自定义属性界面
@@ -14,11 +15,21 @@ package me.feng.objectView.view
 	 */
 	public class CustomAttrView extends Sprite implements IObjectAttributeView
 	{
-		public function set objectAttributeInfo(value:AttributeViewInfo):void
+		private var _space:Object;
+		private var _attributeName:String;
+		private var _attributeType:String;
+
+		private var label:TextField;
+
+		public function init(attributeViewInfo:AttributeViewInfo):void
 		{
+			_space = attributeViewInfo.owner;
+			_attributeName = attributeViewInfo.name;
+			_attributeType = attributeViewInfo.type;
+
 			var label:TextField
 			label = new TextField();
-			label.text = "自定义属性界面_" + value.name;
+			label.text = "自定义属性界面_" + _attributeName;
 			label.textColor = 0xffff00;
 			label.width = 100;
 			label.wordWrap = true;
@@ -26,6 +37,49 @@ package me.feng.objectView.view
 			var bitmap:Bitmap = new Bitmap(new BitmapData(100, 50, false, 0));
 			bitmap.bitmapData.draw(label);
 			addChild(bitmap);
+
+			updateView();
+		}
+
+		public function get space():Object
+		{
+			return _space;
+		}
+
+		public function set space(value:Object):void
+		{
+			_space = value;
+			updateView();
+		}
+
+		public function get attributeName():String
+		{
+			return _attributeName;
+		}
+
+		public function get attributeValue():Object
+		{
+			return _space[_attributeName];
+		}
+
+		public function set attributeValue(value:Object):void
+		{
+			if (_space[_attributeName] != value)
+			{
+				_space[_attributeName] = value;
+
+				//派发属性值修改事件
+				var objectViewEvent:ObjectViewEvent = new ObjectViewEvent(ObjectViewEvent.VALUE_CHANGE, true);
+				objectViewEvent.space = _space;
+				objectViewEvent.attributeName = _attributeName;
+				objectViewEvent.attributeValue = attributeValue;
+				dispatchEvent(objectViewEvent);
+			}
+		}
+
+		private function updateView():void
+		{
+
 		}
 	}
 }

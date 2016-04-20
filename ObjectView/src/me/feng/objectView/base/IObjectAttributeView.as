@@ -9,9 +9,26 @@ package me.feng.objectView.base
 	public interface IObjectAttributeView
 	{
 		/**
-		 * 设置对象属性信息
+		 * 初始化属性界面
 		 * @param value
 		 */
-		function set objectAttributeInfo(value:AttributeViewInfo):void;
+		function init(attributeViewInfo:AttributeViewInfo):void;
+
+		/**
+		 * 界面所属对象（空间）
+		 */
+		function get space():Object;
+		function set space(value:Object):void;
+
+		/**
+		 * 属性名称
+		 */
+		function get attributeName():String;
+
+		/**
+		 * 属性值
+		 */
+		function get attributeValue():Object;
+		function set attributeValue(value:Object):void;
 	}
 }

@@ -8,6 +8,12 @@ package me.feng.objectView.base.view
 
 	import me.feng.objectView.base.IObjectAttributeView;
 	import me.feng.objectView.base.data.AttributeViewInfo;
+	import me.feng.objectView.events.ObjectViewEvent;
+
+	/**
+	 * 属性值发生变化时触发
+	 */
+	[Event(name = "valueChange", type = "me.feng.objectView.events.ObjectViewEvent")]
 
 	/**
 	 * 默认对象属性界面
@@ -15,19 +21,18 @@ package me.feng.objectView.base.view
 	 */
 	public class DefaultObjectAttributeView extends Sprite implements IObjectAttributeView
 	{
-		private var _objectAttributeInfo:AttributeViewInfo;
-		private var isInit:Boolean;
 		private var label:TextField;
 		private var text:TextField;
+		private var textTemp:String;
+		private var _space:Object;
+		private var _attributeName:String;
+		private var _attributeType:String;
 
-		/**
-		 * 初始化
-		 */
-		private function init():void
+		public function init(attributeViewInfo:AttributeViewInfo):void
 		{
-			if (isInit)
-				return;
-			isInit = true;
+			_space = attributeViewInfo.owner;
+			_attributeName = attributeViewInfo.name;
+			_attributeType = attributeViewInfo.type;
 
 			label = new TextField();
 			//			label.height = 50;
@@ -46,22 +51,62 @@ package me.feng.objectView.base.view
 			addChild(text);
 			graphics.beginFill(0x999999);
 			graphics.drawRect(0, 0, 200, 24);
+
+			if (!attributeViewInfo.isEditable())
+			{
+				text.type = TextFieldType.DYNAMIC;
+			}
+
+			updateView();
 		}
 
-		private var textTemp:String;
-		private var _owner:Object;
+		public function get space():Object
+		{
+			return _space;
+		}
+
+		public function set space(value:Object):void
+		{
+			_space = value;
+			updateView();
+		}
+
+		public function get attributeName():String
+		{
+			return _attributeName;
+		}
+
+		public function get attributeValue():Object
+		{
+			return _space[_attributeName];
+		}
+
+		public function set attributeValue(value:Object):void
+		{
+			if (_space[_attributeName] != value)
+			{
+				_space[_attributeName] = value;
+
+				//派发属性值修改事件
+				var objectViewEvent:ObjectViewEvent = new ObjectViewEvent(ObjectViewEvent.VALUE_CHANGE, true);
+				objectViewEvent.space = _space;
+				objectViewEvent.attributeName = _attributeName;
+				objectViewEvent.attributeValue = attributeValue;
+				dispatchEvent(objectViewEvent);
+			}
+		}
 
 		protected function onFocusOut(event:FocusEvent):void
 		{
 			if (textTemp != text.text)
 			{
-				var cls:Class = getDefinitionByName(_objectAttributeInfo.type) as Class;
-				_owner[_objectAttributeInfo.name] = cls(text.text);
+				var cls:Class = getDefinitionByName(_attributeType) as Class;
+				attributeValue = cls(text.text);
 				if (cls == Boolean && (text.text == "0" || text.text == "false"))
 				{
-					_owner[_objectAttributeInfo.name] = false;
+					attributeValue = false;
 				}
-				objectAttributeInfo = objectAttributeInfo;
+				updateView();
 			}
 
 			textTemp = null;
@@ -73,30 +118,12 @@ package me.feng.objectView.base.view
 		}
 
 		/**
-		 * 对象属性信息
+		 * 更新界面
 		 */
-		public function get objectAttributeInfo():AttributeViewInfo
+		private function updateView():void
 		{
-			return _objectAttributeInfo;
-		}
-
-		public function set objectAttributeInfo(value:AttributeViewInfo):void
-		{
-			init();
-
-			_objectAttributeInfo = value;
-			_owner = _objectAttributeInfo.owner;
-
-			label.text = value.name + ":";
-
-			var attributeValue:Object = _owner[value.name];
+			label.text = _attributeName + ":";
 			text.text = String(attributeValue);
-
-			if (!value.isEditable())
-			{
-				text.type = TextFieldType.DYNAMIC;
-			}
-
 		}
 	}
 }

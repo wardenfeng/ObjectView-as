@@ -11,6 +11,12 @@ package me.feng.objectView.base
 		/**
 		 * 对象界面数据
 		 */
-		function set data(value:ObjectViewInfo):void;
+		function set objectViewInfo(value:ObjectViewInfo):void;
+
+		/**
+		 * 界面所属对象（空间）
+		 */
+		function get space():Object;
+		function set space(value:Object):void;
 	}
 }

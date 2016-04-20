@@ -2,6 +2,7 @@ package
 {
 	import com.bit101.components.HBox;
 
+	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
@@ -74,7 +75,8 @@ package
 			a.da = 2;
 			a.db = "```";
 
-			box.addChild(ObjectView.getObjectView(a));
+			var view:DisplayObject = ObjectView.getObjectView(a);
+			box.addChild(view);
 
 			box.addChild(ObjectView.getObjectView({a: 1, b: "ssss", c: Boolean, d: {x: 1, y: 2}}));
 			box.addChild(ObjectView.getObjectView({x: 1, y: "ssss", z: Boolean, d: {x: 1, y: 2}}));
