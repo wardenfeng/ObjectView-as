@@ -63,7 +63,7 @@ package me.feng.objectView.view
 			graphics.lineTo(0, 0);
 			graphics.endFill();
 
-			updateView();
+			$updateView();
 		}
 
 		public function get space():Object

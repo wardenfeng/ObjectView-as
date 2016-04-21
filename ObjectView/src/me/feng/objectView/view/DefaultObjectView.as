@@ -43,7 +43,7 @@ package me.feng.objectView.view
 			graphics.drawRect(0, 0, 200, h);
 			graphics.endFill();
 
-			updateView();
+			$updateView();
 		}
 
 		public function get space():Object
