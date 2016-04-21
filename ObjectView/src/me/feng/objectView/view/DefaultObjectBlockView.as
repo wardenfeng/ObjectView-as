@@ -19,6 +19,8 @@ package me.feng.objectView.view
 		private var _blockName:String;
 
 		private var attributeViews:Vector.<IObjectAttributeView>;
+		private var itemList:Vector.<AttributeViewInfo>;
+		private var isInitView:Boolean;
 
 		/**
 		 * @inheritDoc
@@ -27,7 +29,13 @@ package me.feng.objectView.view
 		{
 			_space = blockViewInfo.owner;
 			_blockName = blockViewInfo.name;
+			itemList = blockViewInfo.itemList;
 
+			$updateView();
+		}
+
+		private function initView():void
+		{
 			var h:Number = 0;
 			if (_blockName != null && _blockName.length > 0)
 			{
@@ -42,7 +50,7 @@ package me.feng.objectView.view
 			}
 
 			attributeViews = new Vector.<IObjectAttributeView>();
-			var objectAttributeInfos:Vector.<AttributeViewInfo> = blockViewInfo.itemList;
+			var objectAttributeInfos:Vector.<AttributeViewInfo> = itemList;
 			for (var i:int = 0; i < objectAttributeInfos.length; i++)
 			{
 				if (!objectAttributeInfos[i].canRead())
@@ -63,7 +71,7 @@ package me.feng.objectView.view
 			graphics.lineTo(0, 0);
 			graphics.endFill();
 
-			$updateView();
+			isInitView = true;
 		}
 
 		public function get space():Object
@@ -92,7 +100,10 @@ package me.feng.objectView.view
 		 */
 		private function $updateView():void
 		{
-
+			if (!isInitView)
+			{
+				initView();
+			}
 		}
 
 		public function updateView():void
